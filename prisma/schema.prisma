@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Employee {
+  id         Int      @id @default(autoincrement())
+  name       String
+  department String
+  email      String
+  phone      String?
+  joinedAt   DateTime @default(now())
+  createdAt  DateTime @default(now())
+}
+
+model Equipment {
+  id         Int      @id @default(autoincrement())
+  name       String
+  category   String
+  status     String   @default("available")
+  assignedTo String?
+  createdAt  DateTime @default(now())
+}
+
+model OvertimeRequest {
+  id           Int      @id @default(autoincrement())
+  employeeName String
+  department   String
+  date         String
+  startTime    String
+  endTime      String
+  reason       String
+  status       String   @default("pending")
+  createdAt    DateTime @default(now())
+}
+
+model LeaveRequest {
+  id           Int      @id @default(autoincrement())
+  employeeName String
+  department   String
+  startDate    String
+  endDate      String
+  reason       String
+  status       String   @default("pending")
+  createdAt    DateTime @default(now())
+}
