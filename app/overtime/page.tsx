@@ -61,7 +61,12 @@ export default async function OvertimePage() {
               <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#475569', marginBottom: '6px' }}>
                 部署 <span style={{ color: '#ef4444' }}>*</span>
               </label>
-              <input name="department" placeholder="例：営業部" required className="form-input" />
+              <select name="department" required className="form-input">
+                <option value="">選択してください</option>
+                <option value="営業部">営業部</option>
+                <option value="総務部">総務部</option>
+                <option value="製造部">製造部</option>
+              </select>
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: '#475569', marginBottom: '6px' }}>
