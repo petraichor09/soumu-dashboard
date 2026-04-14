@@ -46,8 +46,7 @@ export async function createOvertimeRequest(formData: FormData) {
       employeeName: formData.get('employeeName') as string,
       department: formData.get('department') as string,
       date: formData.get('date') as string,
-      startTime: formData.get('startTime') as string,
-      endTime: formData.get('endTime') as string,
+      hours: parseFloat(formData.get('hours') as string),
       reason: formData.get('reason') as string,
     },
   })
